@@ -901,6 +901,7 @@ span.ol-attribution-expand {
 }
 
 #page-content-wrapper:has(#right-panel.active) #backgroundlayerstoolbar-gallery,
+#page-content-wrapper:has(#right-panel.active) #backgroundlayerstoolbar-default,
 #page-content-wrapper:has(#right-panel.active) #zoomtoolbar,
 #page-content-wrapper:has(#right-panel.active) #toolstoolbar {
 	margin-right: 380px !important;
