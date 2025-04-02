@@ -38,7 +38,7 @@
         <extension type="component" id="messageTpl" path="apps/fibre/addons"/>
         <extension type="component" id="homeBtnTools" path="apps/fibre/addons"/>
         <extension type="component" id="helpModal" path="apps/fibre/addons"/>
-        <!--<extension type="component" id="changeBackground" path="apps/fibre/addons"/>-->
+        <extension type="component" id="changeBackground" path="apps/fibre/addons"/>
     </extensions>
 
     <themes>         
