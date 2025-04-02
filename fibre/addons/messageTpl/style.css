@@ -1,0 +1,30 @@
+#messageTplFibre {
+    position: absolute;
+    bottom: 0;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 0em 2em 2em 2em;
+}
+
+.messageTpl__btn {
+    background-color: var(--mycolor);
+    color: white;
+    padding: 10px 12px;
+    border-radius: 4px;
+    transition: all .3s ease-out;
+    margin-bottom: 10px;
+}
+
+.messageTpl__btn:hover {
+    opacity: .7;
+    color: white;
+}
+
+#messageTplFibre p, .messageTplFibre__xs p {
+    margin-bottom: 1.5em;    
+    color: var(--mycolor);
+}
+
+#messageTplFibre hr, .messageTplFibre__xs hr {
+    margin: 0 0 15px;
+}

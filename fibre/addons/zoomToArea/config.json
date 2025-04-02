@@ -1,0 +1,28 @@
+{
+  "js": ["zoomToArea.js"],
+  "css": "style.css",
+  "html": "zoomToArea.html",
+  "target": "page-content-wrapper",
+  "options": {
+    "mviewer": {
+      "ilico_stations": {
+        "dataUrl": "https://sextant.ifremer.fr/services/wfs/ilico?SERVICE=WFS&VERSION=1.3.0&REQUEST=getfeature&TYPENAME=ILICO_points&outputformat=application%2Fjson&srsName=EPSG:4326",
+        "dataEPSG": "EPSG:4326",
+        "fieldNameAreas": "station",
+        "fieldIdAreas": "fid",
+        "fieldSortBy": "station",
+        "bufferSize": 30000,
+        "selectLabel": "Zoomer sur une station"
+      },
+      "appMoose": {
+        "dataUrl": "apps/sites_moose/data/moose_sitesobs.geojson",
+        "dataEPSG": "EPSG:4326",
+        "fieldNameAreas": "nom",
+        "fieldIdAreas": "nom",
+        "fieldSortBy": "nom",
+        "bufferSize": 30000,
+        "selectLabel": "Sélectionner un site d'observation ou une campagne"
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<!-- Button -->
+<button data-toggle="modal" data-target="#helpFibreModal" id="btnhelpModal" title="" tabindex="111" accesskey="Consulter l'aide" class="btn btn-default btn-raised" data-original-title="Consulter l'aide">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM11 7H13V9H11V7ZM11 11H13V17H11V11Z"></path></svg>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="helpFibreModal" tabindex="-1" role="dialog" aria-labelledby="helpFibreModal">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="helpModal__accordion">
+              <div class="modalAccordion__header">
+                <a role="button" data-toggle="collapse" href="#accordionFibre1" aria-expanded="true" aria-controls="accordionFibre1">
+                  Comment utiliser la carte ?
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
+                </a>             
+              </div>
+              <div class="modalAccordion__body collapse in" id="accordionFibre1">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+              </div>
+            </div>
+            <div class="helpModal__accordion">
+              <div class="modalAccordion__header">
+                <a role="button" data-toggle="collapse" href="#accordionFibre2" aria-expanded="false" aria-controls="accordionFibre2">
+                  Pourquoi je ne trouve pas mon adresse sur la carte ?
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
+                </a>             
+              </div>
+              <div class="modalAccordion__body collapse" id="accordionFibre2">
+                <p>Il se peut que la base adresse sur laquelle s’appuie notre carte ne répertorie pas votre habitation/entreprise ou que celle-ci soit tout simplement erronée. Si vous êtes dans cette situation, veuillez tester votre adresse à ce lien. Si vous ne la trouvez toujours pas, merci dans ce cas de nous contacter via <a href="mega.bzh/aide" target="_blank">mega.bzh/aide.</a></p>
+              </div>
+            </div>
+            <div class="helpModal__info">
+              <p>Si vous n'avez pas trouvé de réponse à vos questions, consultez notre <a href="https://www.megalis.bretagne.bzh/foire-aux-questions/" target="_blank">foire aux questions.</a></p>
+            </div>
+          
+      </div>
+    </div>
+  </div>
+</div>

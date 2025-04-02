@@ -1,0 +1,6 @@
+{
+  "js": ["searchBar.js"],
+  "css": "style.css",
+  "html": "searchBar.html",
+  "target": "legend"
+}

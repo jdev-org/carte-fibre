@@ -1,0 +1,30 @@
+#helpMapPopUp {
+    background-color: white;
+    color: var(--mycolor);
+    padding: .5em 1.5em;
+    border-radius: .8em;
+    box-shadow: -1px -1px 15px -1px rgb(0 0 0 / 15%);
+	-webkit-box-shadow: -1px -1px 15px -1px rgb(0 0 0 / 15%);
+	-moz-box-shadow: -1px -1px 15px -1px rgb(0 0 0 / 15%);
+}
+
+#helpMapPopUp h4 {
+    font-weight: 600;
+}
+
+#helpMapPopUp a {
+    background-color: var(--mycolor);
+    color: white;
+    padding: 8px 10px;
+    border-radius: 4px;
+    transition: all .3s ease-out;
+}
+
+#helpMapPopUp a:hover {
+    cursor: pointer;
+    opacity: .7;
+}
+
+#helpTwoFibre {
+    margin-bottom: 1em;
+}

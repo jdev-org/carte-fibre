@@ -1,0 +1,6 @@
+{
+  "js": ["helpMap.js"],
+  "css": "style.css",
+  "html": "helpMap.html",
+  "target": "legend"
+}

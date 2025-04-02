@@ -1,0 +1,6 @@
+{
+  "js": ["messageTpl.js"],
+  "css": "style.css",
+  "html": "messageTpl.html",
+  "target": "right-panel"
+}

@@ -1,0 +1,6 @@
+{
+  "js": ["nomenunavbar.js"],
+  "css": "style.css",
+  "html": "nomenunavbar.html",
+  "target": "page-content-wrapper"
+}

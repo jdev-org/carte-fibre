@@ -1,0 +1,37 @@
+#helpFibreModal .modal-body {
+    padding: 1em 3em;
+}
+
+#helpFibreModal p {
+    font-size: medium;
+    color: var(--mycolor);
+}
+
+.helpModal__accordion {
+    border-bottom: 1px solid #80808026;
+}
+
+.helpModal__info {
+    margin: 2em 0;
+}
+
+#helpFibreModal a {
+    font-weight: 600;
+    color: var(--mycolor);
+}
+
+.modalAccordion__header a{
+    font-size: x-large;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5em 0;
+}
+
+.modalAccordion__header a svg {
+    transition: all .3s ease-in-out;
+}
+
+.modalAccordion__header a:not([aria-expanded="true"]) svg {
+    transform: rotate(-180deg);
+}

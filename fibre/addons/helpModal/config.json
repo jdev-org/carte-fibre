@@ -1,0 +1,6 @@
+{
+    "js": ["helpModal.js"],
+    "css": "style.css",
+    "html": "helpModal.html",
+    "target": "page-content-wrapper"
+  }

@@ -1,0 +1,65 @@
+/* Display components of init mviewer */
+
+.no__menuNavbar #mv-navbar, .no__menuNavbar #sidebar-wrapper, .no__menuNavbar #layers-container-box-header, .no__menuNavbar .glyphicon.glyphicon-remove {
+    display: none;
+}
+
+.no__menuNavbar.xs.mode-s #btn-mode-su-menu {
+    display: none;
+}
+
+.no__menuNavbar #wrapper {
+    padding-left: 0px!important;
+}
+
+.no__menuNavbar #page-content-wrapper,.no__menuNavbar #map {
+    margin-left: 0!important;
+}
+
+.no__menuNavbar #layers-container-box{
+    margin-top: 0!important;
+    padding-top: 1em;
+}
+
+.no__menuNavbar #contentMap {
+    margin-top: 0!important;
+}
+
+
+.no__menuNavbar #zoomtoolbar {
+    top: 1em!important;
+}
+
+.no__menuNavbar #toolstoolbar {
+    top: 110px!important;
+}
+
+.no__menuNavbar #right-panel .mv-header {
+    padding-top: 0px!important;
+}
+
+
+/* Custom btn legend */
+
+#noMenuNavbar-custom-component {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+}
+
+.xl #noMenuNavbar-custom-component, .no__menuNavbar #noMenuNavbar-custom-component{
+    display: none;
+}
+
+.xs #noMenuNavbar-custom-component{
+    display: block!important;
+}
+
+.customBtn__lgd {
+    background-color: var(--mycolor);
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}

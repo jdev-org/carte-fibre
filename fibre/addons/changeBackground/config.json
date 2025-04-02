@@ -1,0 +1,6 @@
+{
+  "js": ["changeBackground.js"],
+  "css": "",
+  "html": "changeBackground.html",
+  "target": "legend"
+}
