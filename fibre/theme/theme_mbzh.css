@@ -13,6 +13,12 @@
 	--myfont: "Arial", sans-serif;
 }
 
+/**/
+::selection {
+	color: white;
+	background-color: black;
+}
+
 /** TOOLBAR **/
 
 /* Modifications des icônes d'origine */
@@ -56,9 +62,6 @@
 #zoomtoolbar button, #toolstoolbar button,#drawtoolsoptions button, #toolstoolbar a {
     color: var(--mycolor);
 }
-
-
-
 
 /* Scroll */
 
@@ -252,12 +255,6 @@ a.geoportail.list-group-item:hover {
 	font-weight: 400;
 }
 
-#parameterspanel .close {
-	color: var(--mycolor) !important;
-	opacity: 0.9 !important;
-}
-
-
 /** PANEL DE PARTAGE **/
 
 #sharepanel .modal-content {
@@ -284,11 +281,6 @@ a.geoportail.list-group-item:hover {
 	padding: 0;
 	font-family: var(--myfont);
 	font-weight: 400;
-}
-
-#sharepanel .close {
-	color: var(--mycolor) !important;
-	opacity: 0.9 !important;
 }
 
 /** MENU **/
@@ -874,13 +866,6 @@ span.ol-attribution-expand {
 .xs .mv-nav a {
 	color: white !important;
 	font-weight: 500;
-}
-
-.xs .modal-content {
-	border-radius: 10px !important;
-	padding: 10px !important;
-	font-family: var(--myfont);
-	background-color: #ffffff !important;
 }
 
 .xs .modal-title {
