@@ -1,0 +1,136 @@
+<div id="homeFibre__content">
+    <h3 class="text-white">Suis-je éligible à <span class="highlight-primary">la fibre</span> ?</h3>
+    <p class="text-white">Découvrez si votre adresse est éligible à la fibre optique grâce à cette carte et suivez l'état d'avancement du déploiement en Bretagne.</p>
+    <img src="apps/fibre/img/home__people.svg">
+    <h4>Où vous situez-vous ? </h4>
+    <div class="homeFibre__tools">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Entrez une adresse ou une commune">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path></svg>
+              </button>
+            </span>
+        </div>
+        <a type="button" class="fibre__btnGeoloc" onclick="mviewer.geoloc();" data-dismiss="modal">
+            Localisez-moi
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995L16.9497 15.9497ZM12 13C10.8954 13 10 12.1046 10 11C10 9.89543 10.8954 9 12 9C13.1046 9 14 9.89543 14 11C14 12.1046 13.1046 13 12 13Z"></path></svg>
+        </a>
+    </div>
+    <a class="home__btnClose" type="button" data-dismiss="modal">Ou naviguez directement dans la carte</a>    
+</div>
+<div id="homeFibre__footer">
+    <a href="https://www.megalis.bretagne.bzh/" target="_blank"><img src="apps/fibre/theme/megalis_logo.png" style="width: 85px;"></a>
+</div>
+
+<style>
+    #help .modal-title, #help .modal-footer {
+        display: none;
+    }
+
+    #help .modal-header {
+        padding: 2em;
+    }
+
+    #help .modal-body {
+        padding: 0px 10px 10px 10px;
+    }
+
+    #help .modal-content {
+        background-color: #60c0c3;
+        background-image: url("apps/fibre/img/home__background.svg");
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: initial;
+    }
+
+    #help .close {
+        color: white!important;
+        transition: all .3s ease-in-out;
+    }
+
+    #help .close:hover {
+        transform: rotate(-90deg);
+    }
+
+    #homeFibre__content{
+        color: var(--mycolor);
+        text-align: center;
+        padding: 0 1em;
+    }
+
+    #homeFibre__content .text-white {
+        color: white;
+    }
+
+    #homeFibre__content h3 {
+        font-size: 3em;
+        font-weight: 600;
+        margin: 0px 0 15px;
+    }
+
+    #homeFibre__content h4 {
+        font-weight: 600;
+        font-size: 1.8em;
+    }
+
+    #homeFibre__content p {
+        font-size: large;
+    }
+
+    #homeFibre__content .highlight-primary {
+        background-color: var(--mycolor);
+    }
+
+    .homeFibre__tools {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 1em 0;
+    }
+    .fibre__btnGeoloc {
+        background-color: var(--mycolor);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 5px;
+        display: flex;
+        align-items: stretch;
+        font-size: 16px;
+        transition: all .3s ease-out;
+    }
+
+    .fibre__btnGeoloc:hover {
+        color: white;
+        cursor: pointer;
+        opacity: .8;
+
+    }
+
+    .fibre__btnGeoloc svg{
+        margin-left: 5px;
+    }
+
+    .home__btnClose {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--mycolor);
+}
+
+.home__btnClose:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: var(--mycolor);
+}
+
+#homeFibre__footer {
+    text-align: end;
+    margin-top: 1em;
+}
+</style>
+<script>
+    // Delete modal-lg to help
+    let modalHome = document.querySelector("#help > .modal-dialog");
+    modalHome.classList.remove("modal-lg");
+</script>
+
