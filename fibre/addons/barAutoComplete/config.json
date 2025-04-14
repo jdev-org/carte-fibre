@@ -1,0 +1,14 @@
+{
+    "type": "module",
+    "js": [
+        "js/barAutoComplete.js",
+        "js/Autocomplete.js"
+    ],
+    "css": [
+        "css/barAutoComplete.css"
+    ],
+    "html": "html/barAutoComplete.html",
+    "target": "page-content-wrapper",
+    "options": {
+    }
+}
