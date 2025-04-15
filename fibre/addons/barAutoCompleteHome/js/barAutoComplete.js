@@ -1,9 +1,9 @@
 import { Autocomplete } from './Autocomplete.js';
 
-const inputId = "autocomplete-input";
-const outputId = "autocomplete-result";
+const inputId = "autocompleteInputHome";
+const outputId = "autocompleteResultHome";
 
-var barAutoComplete = (function () {
+var barAutoCompleteHome = (function () {
 
   var _initBarAutoComplete = () => {
 
@@ -31,10 +31,14 @@ var barAutoComplete = (function () {
       }
       mviewer.zoomToLocation(coordsX, coordsY, zoom, false, projection);
       mviewer.showLocation("EPSG:2154",coordsX, coordsY, true);
-
-      let inputElement = document.getElementById(inputId);
+      
+      let inputElement = document.getElementById(inputId);      
       let texte = selectedValue.textContent;
       inputElement.value = texte;
+      // Add to search map 
+      let inputElementMap = document.getElementById("autocomplete-input");
+      inputElementMap.value = texte;
+      $('#help').modal('hide');
     };
 
     const onInput = (e) => {
@@ -107,4 +111,4 @@ var barAutoComplete = (function () {
   }
 })();
 
-new CustomComponent("barAutoComplete", barAutoComplete.init);
+new CustomComponent("barAutoCompleteHome", barAutoCompleteHome.init);

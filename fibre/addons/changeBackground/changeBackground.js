@@ -25,8 +25,19 @@ const changeBackground = (function() {
                   }
               }
           }
+
+          function displayTooltip(e) {
+            let zoomMap = mviewer.getMap().getView().getZoom();
+            let tooltipMap = document.getElementById("feature-info");
+            if (zoomMap > 14) {          
+                tooltipMap.style.display = 'none';
+            } else {
+                tooltipMap.style.display = 'block';
+            }
+          }
           // Event on map
           mviewer.getMap().on('moveend', changeBackground);
+          mviewer.getMap().on('moveend', displayTooltip);
       },
   };
 })();

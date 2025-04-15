@@ -28,6 +28,7 @@
 
 .no__menuNavbar #zoomtoolbar {
     top: 1em!important;
+    z-index: 100;
 }
 
 .no__menuNavbar #toolstoolbar {
@@ -53,6 +54,7 @@
 
 .xs #noMenuNavbar-custom-component{
     display: block!important;
+    z-index: 10;
 }
 
 .customBtn__lgd {

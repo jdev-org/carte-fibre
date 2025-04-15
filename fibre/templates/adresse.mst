@@ -165,6 +165,17 @@
             margin-bottom: 8em
         }
 
+        #modal-panel #dataToggleDiv {
+            display: none;
+            border:none
+        }
+
+        #modal-panel .panel {box-shadow: none;}
+
+        #modal-panel .panel-body {
+            border: none!important;
+        }
+
         .item__card {
             border-radius: .4em;
         }
