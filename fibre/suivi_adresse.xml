@@ -46,9 +46,20 @@
 
     <themes>         
         <theme name="Fibre"  collapsed="true" id="fibre" icon="fas fa-arrow-right">
+            <layer id="commune_metro" name="Commune filtrées" visible="true" tiled="true" showintoc="false"
+				queryable="false" fields="nom_com,insee_com" aliases="Nom,Code INSEE"
+                infoformat="application/vnd.ogc.gml" featurecount="5"
+				url="https://geobretagne.fr/geoserver/ign/wms"
+                filter="insee_reg = '53'"   
+                style="administratif_noir"      
+                opacity="0.4"       
+                nohighlight="true" 
+				attribution="IGN - Admin Express" 
+				metadata="https://geobretagne.fr/geonetwork/srv/fre/catalog.search#/metadata/b08e6cb1-236c-49b7-88f9-42b500d274d5"
+				metadata-csw="https://geobretagne.fr/geonetwork/srv/eng/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=b08e6cb1-236c-49b7-88f9-42b500d274d5" />
             <layer id="commune" name="Communes" visible="true" queryable="false" showintoc="false"
-                fields="nom_geo" aliases="Nom" 
-                type="customlayer" style="" opacity="1" legendurl="https://kartenn.region-bretagne.fr/kartoviz/apps/region/territoire/img/commune.png" 
+                fields="nom_com" aliases="Nom" 
+                type="customlayer" style="" opacity="1" 
                 url="apps/fibre/customlayers/commune.js" 
                 tooltip="true" tooltipenabled="true"
                 nohighlight="true" 
