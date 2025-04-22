@@ -18,7 +18,7 @@
     zoom="9" 
     projextent="-20037508.342789244, -20037508.342789244, 20037508.342789244, 20037508.342789244"/>
   
-   <baselayers style="default"> 
+   <baselayers style="gallery"> 
         <baselayer visible="true" id="positron" thumbgallery="img/basemap/positron.png" title="CartoDb" label="Positron" type="OSM" url="https://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" attribution="Map tiles by  &lt;a href=&quot;https://cartodb.com/attributions&quot;&gt;CartoDb&lt;/a&gt;, under  &lt;a href=&quot;https://creativecommons.org/licenses/by/3.0/&quot;&gt;CC BY 3.0 &lt;/a&gt;" /> 
         <baselayer  type="WMTS" id="ortho2" label="Photo aérienne IGN" title="GéoPortail" maxscale="1000" thumbgallery="img/basemap/ortho.jpg"
             url="https://data.geopf.fr/wmts" layers="ORTHOIMAGERY.ORTHOPHOTOS" format="image/jpeg" visible="false" fromcapacity="false"
@@ -33,7 +33,7 @@
 
     <searchparameters bbox="false" localities="true" features="false" banmarker="true" imgurl="apps/fibre/theme/pin_fibre.png" imgwidth="45px"/>   
     
-    <extensions>
+    <extensions>    
         <extension type="component" id="noMenuNavbar" path="apps/fibre/addons"/>
         <extension type="component" id="helpMap" path="apps/fibre/addons"/>
         <extension type="component" id="messageTpl" path="apps/fibre/addons"/>
@@ -74,6 +74,17 @@
                 attribution="Source: GéoBretagne" 
                 metadata="https://geobretagne.fr/datahub/dataset/2298d744-49cb-4fcb-9487-26f916fecdff" 
                 metadata-csw="https://geobretagne.fr/geonetwork/srv/eng/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=2298d744-49cb-4fcb-9487-26f916fecdff"/>
+            <layer id="ZAMII_bzh" name="Communes en zone AMII" type="wms" showintoc="false"
+                url="https://geobretagne.fr/geoserver/megalis/wms" 
+                tiled="true" visible="true" infoformat="application/vnd.ogc.gml" 
+                opacity="0"
+                infohighlight ="false"
+                attribution="Source: Mégalis Bretagne" 
+                metadata="https://geobretagne.fr/datahub/dataset/327785c8-8b3a-49ed-b8d5-15d45c820c0b" 
+                metadata-csw="https://geobretagne.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=327785c8-8b3a-49ed-b8d5-15d45c820c0b" 
+                queryable="true" featurecount="3">
+                <template url="apps/fibre/templates/zone_amii.mst" />
+            </layer> 
             <layer id="suivi_adresse" name="Suivi des adresses du Projet Bretagne Très Haut Débit (BTHD)" type="wms" 
                 url="https://geobretagne.fr/geoserver/megalis/wms" 
                 sld="https://{{sld_url}}/fibre_suivi_adresse.sld" 

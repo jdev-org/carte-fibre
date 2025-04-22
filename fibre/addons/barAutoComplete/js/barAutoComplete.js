@@ -29,9 +29,8 @@ var barAutoComplete = (function () {
       } else {
         zoom = 18;
       }
-      mviewer.zoomToLocation(coordsX, coordsY, zoom, false, projection);
-      mviewer.showLocation("EPSG:2154",coordsX, coordsY, true);
-
+      mviewer.zoomToLocation(coordsX, coordsY, zoom, true, projection);
+      
       let inputElement = document.getElementById(inputId);
       let texte = selectedValue.textContent;
       inputElement.value = texte;

@@ -5,9 +5,11 @@ const changeBackground = (function() {
   return {
       init: function() {
           // Event when click to background btn
-          let btnBackground = document.getElementById("backgroundlayersbtn");
-          btnBackground.addEventListener("click", function() {
-              stopChange = true;
+          let btnBackgroundList = document.querySelectorAll("#basemapslist > li");
+          btnBackgroundList.forEach(function (item) {
+            item.addEventListener('click', function () {
+                stopChange = true;
+            });
           });
 
           // Function to change background on map

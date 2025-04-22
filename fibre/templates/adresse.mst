@@ -195,6 +195,7 @@
 
         .itemCard__header img {
             margin-left: 1em;
+            pointer-events: none;
         }
 
         .itemCard__body {

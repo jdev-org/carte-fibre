@@ -1,0 +1,83 @@
+{{#features}}
+    <li id="item_{{feature_ol_uid}}" class="item" style="width:100%;">
+        <div class="item__card" style="background-color:#0000000a;">
+            <div class="itemCard__header" style="background-color:#000000;">
+                <div>{{cx_nom}}</div>
+                <img src="apps/fibre/img/home__fibre.svg">
+            </div>
+            <div class="itemCard__body">
+                <div class="itemCard__title" style="color:#000000;">Vous êtes sur une zone déployée par les opérateurs privés.</div>
+                <p style="color:#000000;">Vous pouvez contacter votre fournisseur d'accès à internet pour avoir plus d'information.</p>                           
+            </div>          
+        </div>
+    </li>
+    <style>
+
+        #right-panel .active {
+            padding-bottom: 1em!important;
+        }
+
+        #right-panel .list-group-item > li {
+            padding-bottom: 1em!important;
+            list-style:none;
+        }
+        #right-panel .panel-heading {
+            display: none;
+        }
+
+        #right-panel .panel, #right-panel .list-group-item, #right-panel .panel-body {
+            border: none;
+        }
+        
+        #right-panel .panel {
+            box-shadow: none;
+            margin-bottom: 8em
+        }
+
+        #modal-panel #dataToggleDiv {
+            display: none;
+            border:none
+        }
+
+        #modal-panel .panel {box-shadow: none;}
+
+        #modal-panel .panel-body {
+            border: none!important;
+        }
+
+        .item__card {
+            border-radius: .4em;
+        }
+
+        .itemCard__header {      
+            color:white;
+            border-top-left-radius:.4em;
+            border-top-right-radius:.4em;
+            padding: .7em;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .itemCard__header img {
+            margin-left: 1em;
+            pointer-events: none;
+        }
+
+        .itemCard__body {
+            padding: 1em;
+        }
+
+        .itemCard__title {
+            font-size: 1.4em;
+            font-weight: 600;
+            line-height: 1;
+            margin: 10px 0;
+        }
+            
+    </style>
+    
+{{/features}}
