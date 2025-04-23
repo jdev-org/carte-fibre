@@ -17,7 +17,7 @@
 }
 
 .xs #autocomplete-container input {
-    width: 20em;
+    width: 17em;
     font-size: medium;
 }
 
@@ -30,7 +30,7 @@
 
 .xs #fibre__mapTools .fibre__btnGeoloc {
   position: fixed;
-  bottom: 2em;
+  bottom: 2.5em;
 }
 
 #autocomplete-container {
