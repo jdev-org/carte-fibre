@@ -2,7 +2,7 @@
     <li id="item_{{feature_ol_uid}}" class="item" style="width:100%;">
         <div class="item__card" style="background-color:#0000000a;">
             <div class="itemCard__header" style="background-color:#000000;">
-                <div>{{cx_nom}}</div>
+                <div></div>
                 <img src="apps/fibre/img/home__fibre.svg">
             </div>
             <div class="itemCard__body">
