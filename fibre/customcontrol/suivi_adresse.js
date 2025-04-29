@@ -6,14 +6,33 @@ const cc = (function() {
 
     var _initialized = false;
 
+    async function getDateDataUpdate() {
+        var urlS = new URL(
+          `https://edp.jdev.fr/geoserver/edp/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=edp%3Afontaines_maj&outputFormat=application%2Fjson`
+        );
+        $.getJSON(urlS, function (dataS) {
+          var itemsS = [];
+          $.each(dataS.features, function (key, valS) {
+            $.each(valS.properties, function (i, j) {
+              if (i == "datemaj") {
+                $("#section_date_maj").html(
+                  "<i><small>Mis à jour le " + j + "</small></i>"
+                );
+                console.log(j)
+              } else {
+                itemsS.push("<li>" + j.replace(/,/gi, "</li><li>") + " ");
+              }
+            });
+          });
+        });
+    }
+
     return {
         /*
          * Public
-         */
-
-        init: function() {
-            
-            if (!_initialized) {
+        */
+        init: function() {            
+            if (!_initialized) {                
                 let lgdcustom = `
                     <div id="fibreLgdCustom">
                         <div class="lgdCustom__title">Avancement du déploiement de la fibre optique en Bretagne</div>
@@ -39,21 +58,23 @@ const cc = (function() {
                                 <span>Déploiement suspendu</span>
                             </div>
                         </div>
-                        <div><i><small>Mise à jour le 01/04/2025</small></i></div>
+                        <div id="section_date_maj"></div>
+                        <div><i><small><div id="section_date_maj"></div></small></i></div>
                     </div>
                 `
                 let lgdLayer = document.querySelector('.list-group-item[data-layerid="suivi_adresse"]');
                 lgdLayer.insertAdjacentHTML("afterbegin", lgdcustom); 
-                _initialized = true;
-            };
-                   
-        },
 
+                // Add update data date
+                //getDateDataUpdate();
+
+                _initialized = true;
+            };                   
+        },
         destroy: function() {
             // mandatory - code executed when layer panel is closed
             _initialized = false;
         }
     };
-
 }());
 new CustomControl(layerid, cc.init, cc.destroy);
