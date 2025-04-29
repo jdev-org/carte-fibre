@@ -59,7 +59,7 @@ var barAutoCompleteHome = (function () {
       const value = inputEvt.target.value.toLowerCase();
       let filteredData = [];
 
-      fetch(`https://api-adresse.data.gouv.fr/search/?q=${value}&autocomplete=1&lat=48.202047&lon=-2.932644`)
+      fetch(`https://data.geopf.fr/geocodage/search/?q=${value}&autocomplete=1&lat=48.202047&lon=-2.932644`)
         .then(response => {
           if (!response.ok) {
             throw new Error('Réponse réseau incorrecte');
