@@ -124,7 +124,7 @@
           <sld:Name>Classe_6746</sld:Name>
           <sld:Title>Déploiement suspendu</sld:Title>
           <ogc:Filter>
-            <ogc:And>
+            <ogc:Or>
               <ogc:PropertyIsLike wildCard="*" singleChar="." escape="!">
                 <ogc:PropertyName>statut_rg</ogc:PropertyName>
                 <ogc:Literal>KO</ogc:Literal>
@@ -133,7 +133,7 @@
                 <ogc:PropertyName>statut_rg</ogc:PropertyName>
                 <ogc:Literal>GEL</ogc:Literal>
               </ogc:PropertyIsLike>
-            </ogc:And>
+            </ogc:Or>
           </ogc:Filter>
           <sld:MaxScaleDenominator>300000</sld:MaxScaleDenominator>
           <sld:PointSymbolizer>
