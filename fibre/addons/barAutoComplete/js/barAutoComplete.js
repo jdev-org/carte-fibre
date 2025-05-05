@@ -55,7 +55,12 @@ var barAutoComplete = (function () {
       const value = inputEvt.target.value.toLowerCase();
       let filteredData = [];
 
-      fetch(`https://data.geopf.fr/geocodage/search/?q=${value}&autocomplete=1&lat=48.202047&lon=-2.932644`)
+      // If the input is empty, don't fetch data
+      if (!value) {
+        return;
+      }
+
+      fetch(`https://data.geopf.fr/geocodage/completion?text=${value}&type=StreetAddress,PositionOfInterest&ter=5`)
         .then(response => {
           if (!response.ok) {
             throw new Error('Réponse réseau incorrecte');
@@ -63,10 +68,8 @@ var barAutoComplete = (function () {
           return response.json();
         })
         .then(data => {
-          
-          filteredData = data.features.filter((item) =>
-            item.properties.label.toLowerCase().includes(value)
-          );
+
+          filteredData = data.results;
 
           const container = document.getElementById(outputId);
           if (!container) return;
@@ -77,7 +80,7 @@ var barAutoComplete = (function () {
             html = filteredData
               .map(
                 (item) => 
-                  `<a class="autocomplete-item" type="button" geo-type="${item.properties.type}" value='[${item.properties.x},${item.properties.y}]' id=${_.uniqueId()}>${item.properties.label}</a>
+                  `<a class="autocomplete-item" type="button" geo-type="${item.country}" value='[${item.x},${item.y}]' id=${_.uniqueId()}>${item.fulltext}</a>
                   `        
               )
               .join("");
