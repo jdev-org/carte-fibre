@@ -2,6 +2,8 @@ import { Autocomplete } from './Autocomplete.js';
 
 const inputId = "autocomplete-input";
 const outputId = "autocomplete-result";
+// Get the configuration
+var config = mviewer.customComponents.barAutoComplete.config.options;
 
 var barAutoComplete = (function () {
 
@@ -60,7 +62,10 @@ var barAutoComplete = (function () {
         return;
       }
 
-      fetch(`https://data.geopf.fr/geocodage/completion?text=${value}&type=StreetAddress,PositionOfInterest&ter=5`)
+      // Get the URL from the config
+      const _url = config.urlCompletion;
+
+      fetch(`${_url}?text=${value}&type=StreetAddress,PositionOfInterest&ter=5`)
         .then(response => {
           if (!response.ok) {
             throw new Error('Réponse réseau incorrecte');
