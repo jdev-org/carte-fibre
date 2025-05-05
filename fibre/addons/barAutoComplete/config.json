@@ -10,5 +10,6 @@
     "html": "html/barAutoComplete.html",
     "target": "page-content-wrapper",
     "options": {
+        "urlCompletion": "https://data.geopf.fr/geocodage/completion"
     }
 }

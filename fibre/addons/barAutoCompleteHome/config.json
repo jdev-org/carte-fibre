@@ -10,5 +10,6 @@
     "html": "html/barAutoComplete.html",
     "target": "homeFibreSearch",
     "options": {
+        "urlCompletion": "https://data.geopf.fr/geocodage/completion"
     }
 }
