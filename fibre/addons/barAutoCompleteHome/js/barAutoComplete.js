@@ -19,7 +19,6 @@ var barAutoCompleteHome = (function () {
 
     const onSelect = (i) => {
       let zoom;
-      let projection = "EPSG:2154";
       let selectedValue = document.getElementById(i.target.id);
       let coords = selectedValue.getAttribute("value");
       let coordsArray = JSON.parse(coords);
@@ -31,7 +30,8 @@ var barAutoCompleteHome = (function () {
       } else {
         zoom = 18;
       }
-      mviewer.zoomToLocation(coordsX, coordsY, zoom, true, projection);
+      // Use the default projection of the function zoomToLocation (EPSG:4326)
+      mviewer.zoomToLocation(coordsX, coordsY, zoom, true);
       
       let inputElement = document.getElementById(inputId);      
       let texte = selectedValue.textContent;
