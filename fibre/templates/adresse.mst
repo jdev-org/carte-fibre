@@ -17,7 +17,7 @@
                 <div id="infoTech_{{feature_ol_uid}}_COM-RAC" class="infoTech__block" style="display:none;">
                     <p>
                     Nombre de ligne(s) prévue(s)<br> à cette adresse : {{nb_loc}}<br>
-                    Référence technique : {{id}}
+                    Référence technique : {{ref_technique}}
                     </p>
                 </div>            
             </div>          
