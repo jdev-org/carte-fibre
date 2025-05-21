@@ -25,8 +25,9 @@ var barAutoCompleteHome = (function () {
       let coordsX = coordsArray[0];
       let coordsY = coordsArray[1];
       let geotype = selectedValue.getAttribute("geo-type");
-      if(geotype == "municipality"){
-        zoom = 13;
+      let poiType = selectedValue.getAttribute("poi-type");
+      if(geotype === "municipality" && !poiType){
+        zoom = 14;
       } else {
         zoom = 18;
       }
@@ -87,11 +88,9 @@ var barAutoCompleteHome = (function () {
           let html;
           if (filteredData.length > 0) {
             html = filteredData
-              .map(
-                (item) => 
-                  `<a class="autocomplete-item" type="button" geo-type="${item.country}" value='[${item.x},${item.y}]' id=${_.uniqueId()}>${item.fulltext}</a>
-                  `        
-              )
+              .map((item) => {
+                return `<a class="autocomplete-item" type="button" geo-type="${item.kind}" poiType="${item.poiType || null}" value='[${item.x},${item.y}]' id=${_.uniqueId()}>${item.fulltext}</a>`;
+              })
               .join("");
           } else {
             html = `<div class="autocomplete-item">Aucun résultat trouvé</div>`;
