@@ -57,6 +57,7 @@ var barAutoComplete = (function () {
     const displayAutocompleteList = (inputEvt) => {
       const value = inputEvt.target.value.toLowerCase();
       let filteredData = [];
+      let results = [];
 
       // If the input is empty, don't fetch data
       if (!value) {
@@ -66,7 +67,7 @@ var barAutoComplete = (function () {
       // Get the URL from the config
       const _url = config.urlCompletion;
 
-      fetch(`${_url}?text=${value}&type=StreetAddress,PositionOfInterest&ter=5`)
+      fetch(`${_url}?text=${value}`)
         .then(response => {
           if (!response.ok) {
             throw new Error('Réponse réseau incorrecte');
@@ -75,29 +76,84 @@ var barAutoComplete = (function () {
         })
         .then(data => {
 
-          filteredData = data.results;
+          results = data.results;
+
+          const acceptedKinds = ["municipality", "locality", "housenumber", "street"];
+          filteredData = results.filter(f => acceptedKinds.includes(f.kind));
 
           const container = document.getElementById(outputId);
           if (!container) return;
 
-          // Génère le HTML
-          let html;
-          if (filteredData.length > 0) {
-            html = filteredData
-              .map((item) => {
-                return `<a class="autocomplete-item" type="button" geo-type="${item.kind}" poiType="${item.poiType || null}" value='[${item.x},${item.y}]' id=${_.uniqueId()}>${item.fulltext}</a>`;
-              })
-              .join("");
-          } else {
-            html = `<div class="autocomplete-item">Aucun résultat trouvé</div>`;
-          }
+          // Créer les éléments HTML pour chaque type de résultat
+          let html = loadResultsSearch(filteredData, acceptedKinds);
 
-          // Affiche le HTML dans le conteneur
-          autocompleteInstance.display(html, onSelect);
+          // Affiche le html dans le conteneur
+          const htmlString = Object.values(html).map(div => div.outerHTML);
+          autocompleteInstance.display(htmlString, onSelect);
       })
       .catch(error => {
         console.error('Il y a eu un problème avec la requête fetch :', error);
       });
+    };
+
+    const loadResultsSearch = (data, kinds) => {
+      let kindLists = {};
+      let results = {};
+
+      for (const kind of kinds) {
+        const container = document.createElement("div");
+        container.className = `${kind}-group`;
+        container.id = kind;
+
+        const title = document.createElement("div");
+        title.className = `${kind}-title`;
+        title.textContent = formatKindTitle(kind);
+        title.style.fontWeight = "bold";
+
+        container.appendChild(title);
+        kindLists[kind] = container;
+      }
+
+      for (const item of data) {
+        const kind = item.kind;
+        const container = kindLists[kind];
+        if (!container) continue;
+        
+        const a = document.createElement("a");
+        a.className = "autocomplete-item";
+        a.setAttribute("type", "button");
+        a.setAttribute("geo-type", item.kind);
+        a.setAttribute("poi-type", item.poiType || null);
+        a.setAttribute("value", `[${item.x},${item.y}]`);
+        a.id = _.uniqueId();
+        a.textContent = item.fulltext;
+        a.style.display = "block";
+        kindLists[kind].appendChild(a);
+      }
+
+      for (const kind of kinds) {
+        const container = kindLists[kind];
+        if (container.children.length > 1) {
+          results[kind] = container;
+        }
+      }
+
+      return results;
+    };
+
+    const formatKindTitle = (kind) => {
+      switch (kind) {
+        case "municipality":
+          return "Communes";
+        case "locality":
+          return "Lieux-dits";
+        case "housenumber":
+          return "Adresse";
+        case "street":
+          return "Voies";
+        default:
+          return kind.charAt(0).toUpperCase() + kind.slice(1);
+      }
     };
 
     autocompleteInstance = new Autocomplete(
