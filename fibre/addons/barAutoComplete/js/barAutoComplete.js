@@ -26,7 +26,7 @@ var barAutoComplete = (function () {
       let coordsY = coordsArray[1];
       let geotype = selectedValue.getAttribute("geo-type");
       let poiType = selectedValue.getAttribute("poi-type");
-      if(geotype === "municipality" && !poiType){
+      if(geotype === "municipality" && poiType === "null"){
         zoom = 14;
       } else {
         zoom = 18;
